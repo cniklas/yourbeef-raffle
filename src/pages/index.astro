@@ -1,81 +1,119 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Yourbeef Gewinnspiel">
+	<main class="grid flex-auto justify-center px-4 py-5 text-center">
+		<div class="max-w-xl">
+			<div class="mb-4 text-lg font-semibold uppercase tracking-widest">Yourbeef Gewinnspiel</div>
+			<h1 class="mb-4 text-4xl font-semibold text-white">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+			<div class="mb-12">
+				Die besten drei Schätzungen gewinnen jeweils ein <strong class="font-semibold text-[--text-light]"
+					><a href="https://yourbeef.de/premium-steak-paket.html">Premium&nbsp;Steak&nbsp;Paket</a></strong
+				> mit den besten Steaks vom Rinderrücken
+				<strong class="font-semibold text-[--text-light]">im Wert von über 120&nbsp;€</strong>.
+			</div>
+
+			<form
+				class="relative mb-7 bg-[--layer-bg-dark] px-4 py-5 text-left accent-[--button-bg] before:absolute before:-top-5 before:left-0 before:right-0 before:h-9 before:bg-[url('/paper.png')] before:bg-cover md:px-8 md:py-10"
+				method="post"
+			>
+				<div class="mb-5">
+					<label for="form-question" class="mb-1 inline-block after:content-[':']">Das ausgestellte Stück wiegt</label>
+					<div>
+						<input
+							type="text"
+							name="question"
+							id="form-question"
+							class="h-10 w-full max-w-[12rem] rounded-sm bg-[--page-bg] px-4"
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<div class="mb-1 flex items-start">
+						<input type="checkbox" name="raffle" id="form-raffle" class="mr-2 mt-1 aspect-square w-4 shrink-0" />
+						<label for="form-raffle">Ja, ich möchte am Gewinnspiel teilnehmen.</label>
+					</div>
+					<p class="text-xs">
+						Bitte kontaktiert mich im Falle eines Gewinns per E-Mail. Ich bin mit der elektronischen Speicherung und
+						Verarbeitung durch yourbeef.de (Fleischwaren Harald&nbsp;Kiesinger e.K.) einverstanden. Meine Daten werden
+						nicht an Dritte weitergegeben.
+					</p>
+				</div>
+
+				<div class="mb-5">
+					<div class="mb-1 flex items-start">
+						<input
+							type="checkbox"
+							name="newsletter"
+							id="form-newsletter"
+							class="mr-2 mt-1 aspect-square w-4 shrink-0"
+						/>
+						<label for="form-newsletter">Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter.</label>
+					</div>
+					<p class="text-xs">(Exklusive Angebote, die besten Grilltipps und Gratis-Rezepte)</p>
+				</div>
+
+				<div class="mb-5">
+					<label for="form-firstname" class="mb-1 inline-block after:content-[':']">Vorname</label>
+					<div>
+						<input
+							type="text"
+							name="firstname"
+							id="form-firstname"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							autocomplete="given-name"
+							required
+						/>
+					</div>
+				</div>
+				<div class="mb-5">
+					<label for="form-lastname" class="mb-1 inline-block after:content-[':']">Name</label>
+					<div>
+						<input
+							type="text"
+							name="lastname"
+							id="form-lastname"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							autocomplete="family-name"
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="mb-8">
+					<label for="form-email" class="mb-1 inline-block after:content-[':']">E-Mail-Adresse</label>
+					<div>
+						<input
+							type="email"
+							name="email"
+							id="form-email"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							autocomplete="email"
+							required
+						/>
+					</div>
+				</div>
+
+				<div>
+					<button
+						type="submit"
+						class="rounded-sm bg-[--button-bg] px-7 py-2 font-semibold text-white hover:bg-[--button-bg-hover] focus-visible:bg-[--button-bg-hover]"
+						>Absenden</button
+					>
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<footer class="grid place-content-center bg-[--footer-bg] px-4 py-5 text-sm text-[--footer-text]">
+		<div>
+			<a href="https://yourbeef.de/">Yourbeef.de</a> • <a href="https://yourbeef.de/impressum">impressum</a> • <a
+				href="https://yourbeef.de/datenschutz">Datenschutz</a
+			>
+		</div>
+	</footer>
+</Layout>

@@ -1,36 +1,58 @@
 ---
 export interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-[--page-bg] text-[--text-medium]">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<!-- <meta name="description" content="Astro description"> -->
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<meta name="robots" content="noindex,follow">
+		<!-- Montserrat Regular, Montserrat Bold, Fjalla One -->
 	</head>
-	<body>
+	<body class="flex flex-col">
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--page-bg: #141414;
+		--footer-bg: #faf8f4;
+		--footer-text: #6f6f6f;
+		--layer-bg-dark: #212121;
+		--layer-bg-medium: #2b2b2b;
+		--text-light: #d5d5d5;
+		--text-medium: #969696;
+		--button-bg: #32651b;
+		--button-bg-hover: #3e861e;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+
+	body {
+		min-height: 100vh;
+		min-height: 100dvh;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+
+	:any-link {
+		@apply underline;
+	}
+
+	:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+
+	input:focus-visible,
+	button:focus-visible,
+	button:active {
+		outline-color: var(--button-bg-hover);
 	}
 </style>
