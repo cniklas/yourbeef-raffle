@@ -10,13 +10,18 @@ const { title } = Astro.props
 <html lang="de" class="bg-[--page-bg] text-[--text-medium]">
 	<head>
 		<meta charset="UTF-8" />
-		<!-- <meta name="description" content="Astro description"> -->
 		<meta name="viewport" content="width=device-width" />
+
+		<style is:inline>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('../fonts/fjalla-one-v15-latin-regular.woff2') format('woff2')}</style>
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-regular.woff2' crossorigin />
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-600.woff2' crossorigin />
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/fjalla-one-v15-latin-regular.woff2' crossorigin />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 
+		<meta name="description" content="Yourbeef Gewinnspiel">
 		<meta name="robots" content="noindex,follow">
-		<!-- Montserrat Regular, Montserrat Bold, Fjalla One -->
 	</head>
 	<body class="flex flex-col">
 		<slot />
@@ -37,15 +42,21 @@ const { title } = Astro.props
 	}
 
 	body {
+		font-family: Montserrat, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 		min-height: 100vh;
 		min-height: 100dvh;
+	}
+
+	.yb__fjalla {
+		font-family: 'Fjalla One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	}
 
 	:any-link {
 		@apply underline;
 	}
 
-	:focus-visible {
+	:focus-visible,
+	button:active {
 		outline: 2px solid currentColor;
 		outline-offset: 2px;
 	}
