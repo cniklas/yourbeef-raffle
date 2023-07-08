@@ -9,15 +9,15 @@ const { title } = Astro.props
 <!DOCTYPE html>
 <html lang="de" class="bg-[--page-bg] text-[--text-medium]">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
 
 		<style is:inline>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('../fonts/fjalla-one-v15-latin-regular.woff2') format('woff2')}</style>
-		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-regular.woff2' crossorigin />
-		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-600.woff2' crossorigin />
-		<link rel='preload' as='font' type='font/woff2' href='/fonts/fjalla-one-v15-latin-regular.woff2' crossorigin />
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-regular.woff2' crossorigin>
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/montserrat-v25-latin-600.woff2' crossorigin>
+		<link rel='preload' as='font' type='font/woff2' href='/fonts/fjalla-one-v15-latin-regular.woff2' crossorigin>
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 		<title>{title}</title>
 
 		<meta name="description" content="Yourbeef Gewinnspiel">
@@ -37,6 +37,7 @@ const { title } = Astro.props
 		--layer-bg-medium: #2b2b2b;
 		--text-light: #d5d5d5;
 		--text-medium: #969696;
+		--text-dark: #241c15;
 		--button-bg: #32651b;
 		--button-bg-hover: #3e861e;
 	}
@@ -62,8 +63,20 @@ const { title } = Astro.props
 	}
 
 	input:focus-visible,
-	button:focus-visible,
-	button:active {
+	button[type='submit']:focus-visible,
+	button[type='submit']:active {
 		outline-color: var(--button-bg-hover);
+	}
+
+	.yb__dialog-header {
+		@apply font-semibold tracking-wide uppercase text-lg mr-6;
+	}
+
+	.yb__dialog-header.success {
+		@apply text-[--button-bg-hover];
+	}
+
+	.yb__dialog-header.error {
+		@apply text-red-700;
 	}
 </style>
