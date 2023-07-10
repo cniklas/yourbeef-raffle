@@ -24,15 +24,18 @@ import Layout from '../layouts/Layout.astro'
 			>
 				<div class="mb-5">
 					<label for="form-answer" class="mb-1 inline-block after:content-[':']">Das ausgestellte Stück wiegt</label>
-					<div>
+					<div class="flex items-center">
 						<input
 							type="text"
 							name="answer"
 							id="form-answer"
-							class="h-10 w-full max-w-[12rem] rounded-sm bg-[--page-bg] px-4"
-							maxlength="16"
+							class="h-10 w-20 rounded-sm bg-[--page-bg] px-2 text-right"
+							inputmode="decimal"
+							autocomplete="off"
+							maxlength="8"
 							required
 						/>
+						<span class="ml-2">kg</span>
 					</div>
 				</div>
 
@@ -68,7 +71,7 @@ import Layout from '../layouts/Layout.astro'
 							type="email"
 							name="email"
 							id="form-email"
-							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
 							autocomplete="email"
 							maxlength="64"
 							required
@@ -83,7 +86,7 @@ import Layout from '../layouts/Layout.astro'
 							type="text"
 							name="first_name"
 							id="form-firstname"
-							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
 							autocomplete="given-name"
 							maxlength="24"
 							required
@@ -97,7 +100,7 @@ import Layout from '../layouts/Layout.astro'
 							type="text"
 							name="last_name"
 							id="form-lastname"
-							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-4"
+							class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
 							autocomplete="family-name"
 							maxlength="32"
 							required
@@ -125,13 +128,13 @@ import Layout from '../layouts/Layout.astro'
 	</footer>
 
 	<div
-		class="fixed inset-0 grid place-content-center bg-black bg-opacity-70 invisible backdrop-blur-[3px]"
+		class="invisible fixed inset-0 grid place-content-center bg-black bg-opacity-70 backdrop-blur-[3px]"
 		id="js-dialog"
 	>
-		<div class="bg-white text-[--text-dark] px-4 py-5 relative max-w-xl">
+		<div class="relative max-w-xl bg-white px-4 py-5 text-[--text-dark]">
 			<button
 				type="button"
-				class="bg-white w-8 h-8 absolute top-2.5 rounded-full right-2 before:bg-[#414141] before:absolute before:left-4 before:h-4 before:top-2 before:w-0.5 before:rotate-45 after:bg-[#414141] after:absolute after:left-4 after:h-4 after:top-2 after:w-0.5 after:-rotate-45"
+				class="absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 before:bg-[#414141] after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45 after:bg-[#414141]"
 				id="js-close-button"><span class="sr-only">schließen</span></button
 			>
 			<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
