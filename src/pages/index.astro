@@ -5,17 +5,23 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="Yourbeef Gewinnspiel">
 	<main class="grid flex-auto justify-center px-4 py-5 text-center">
 		<div class="max-w-xl">
-			<div class="mb-4 font-semibold uppercase tracking-widest">Yourbeef Gewinnspiel</div>
+			<img
+				class="mb-6 mx-auto max-w-[200px]"
+				src="/yourbeef-logo.png"
+				alt="Yourbeef - der Fleischversand für Kenner"
+				width="600"
+				height="143"
+			/>
 			<h1 class="yb__fjalla mb-7 text-4xl uppercase !leading-tight tracking-wide text-white md:text-5xl">
 				Wie viel wiegt das ausgestellte Stück Fleisch?
 			</h1>
 
 			<div class="mb-12">
-				Die besten drei Schätzungen gewinnen jeweils ein <a
+				Der Gewinner erhält ein <a
 					href="https://yourbeef.de/premium-steak-paket.html"
 					class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-				> mit den besten Steaks vom Rinderrücken
-				<strong class="font-semibold text-[--text-light]">im Wert von über 120&nbsp;€</strong>.
+				> im Wert von <strong class="font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den besten Steak Cuts
+				von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 			</div>
 
 			<form
@@ -41,7 +47,13 @@ import Layout from '../layouts/Layout.astro'
 
 				<div class="mb-5">
 					<div class="mb-1 flex items-start">
-						<input type="checkbox" name="raffle" id="form-raffle" class="mr-2 mt-1 aspect-square w-4 shrink-0" />
+						<input
+							type="checkbox"
+							name="raffle"
+							id="form-raffle"
+							class="mr-2 mt-1 aspect-square w-4 shrink-0"
+							required
+						/>
 						<label for="form-raffle">Ja, ich möchte am Gewinnspiel teilnehmen.</label>
 					</div>
 					<p class="text-xs">
@@ -59,9 +71,11 @@ import Layout from '../layouts/Layout.astro'
 							id="form-newsletter"
 							class="mr-2 mt-1 aspect-square w-4 shrink-0"
 						/>
-						<label for="form-newsletter">Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter.</label>
+						<label for="form-newsletter"
+							>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></label
+						>
 					</div>
-					<p class="text-xs">(Exklusive Angebote, die besten Grilltipps und Gratis-Rezepte)</p>
+					<p class="text-xs">Exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
 				</div>
 
 				<div class="mb-5">
