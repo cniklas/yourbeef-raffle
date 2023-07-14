@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro'
 	<main class="grid flex-auto justify-center px-4 py-5 text-center">
 		<div class="max-w-xl">
 			<img
-				class="mb-6 mx-auto max-w-[200px]"
+				class="mx-auto mb-6 max-w-[200px]"
 				src="/yourbeef-logo.png"
 				alt="Yourbeef - der Fleischversand für Kenner"
 				width="600"
@@ -20,8 +20,8 @@ import Layout from '../layouts/Layout.astro'
 				Der Gewinner erhält ein <a
 					href="https://yourbeef.de/premium-steak-paket.html"
 					class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-				> im Wert von <strong class="font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den besten Steak Cuts
-				von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+				> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit
+				den besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 			</div>
 
 			<form
@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro'
 						<label for="form-raffle">Ja, ich möchte am Gewinnspiel teilnehmen.</label>
 					</div>
 					<p class="text-xs">
-						Bitte kontaktiert mich im Falle eines Gewinns per E-Mail. Ich bin mit der elektronischen Speicherung und
+						Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
 						Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht
 						an Dritte weitergegeben.
 					</p>
@@ -75,7 +75,7 @@ import Layout from '../layouts/Layout.astro'
 							>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></label
 						>
 					</div>
-					<p class="text-xs">Exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
+					<p class="text-xs">Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
 				</div>
 
 				<div class="mb-5">
@@ -169,7 +169,7 @@ import Layout from '../layouts/Layout.astro'
 			<div>Deine Antwort wurde erfolgreich übertragen.</div>
 		`
 	}
-	const handleError = async response => {
+	const handleError = async (response: Response) => {
 		const isValidationError = response.status === 422
 		const data = await response.json()
 		dialogContentEl.innerHTML = `
