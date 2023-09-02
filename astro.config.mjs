@@ -1,16 +1,17 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
-import htmlMinify from '@frontendista/astro-html-minify'
+import minify from '@frontendista/astro-html-minify'
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
 		tailwind(),
-		htmlMinify({
-			// https://github.com/frontendista/astro-html-minify#2-integration-options
-			htmlTerserMinifierOptions: {
-				collapseWhitespace: true,
-				conservativeCollapse: true,
+		minify({
+			// https://github.com/frontendista/astro-html-minify#13-customize-minifiers-options
+			html: {
+				// collapseWhitespace: true,
+				// conservativeCollapse: true,
+				decodeEntities: false,
 				removeComments: true,
 				removeAttributeQuotes: true,
 				removeRedundantAttributes: false, // 🔺 otherwise type="text" on input elements gets cut off
