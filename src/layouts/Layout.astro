@@ -86,13 +86,14 @@ const { title } = Astro.props
 
 	.yb__dialog-header {
 		@apply mr-6 text-lg font-semibold uppercase tracking-wide;
+		color: var(--color, currentColor);
 	}
 
 	.yb__dialog-header.success {
-		color: var(--button-bg-hover);
+		--color: var(--button-bg-hover);
 	}
 
 	.yb__dialog-header.error {
-		color: var(--error);
+		--color: var(--error);
 	}
 </style>
