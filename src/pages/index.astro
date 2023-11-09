@@ -13,8 +13,8 @@ import Layout from '../layouts/Layout.astro'
 			Der Gewinner erhält ein <a
 				href="https://yourbeef.de/premium-steak-paket.html"
 				class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-			> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den
-			besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+			> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit
+			den besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 		</div>
 
 		<form
@@ -39,10 +39,10 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<div class="mb-1 flex items-start">
-					<input type="checkbox" name="raffle" id="form-raffle" class="mr-2 mt-1 aspect-square w-4 shrink-0" required />
-					<label for="form-raffle">Ja, ich möchte am Gewinnspiel teilnehmen.</label>
-				</div>
+				<label class="mb-1 inline-flex items-start">
+					<input type="checkbox" name="raffle" class="mr-2 mt-1 aspect-square w-4 h-4 shrink-0" required />
+					 Ja, ich möchte am Gewinnspiel teilnehmen.
+				</label>
 				<p class="text-xs">
 					Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
 					Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht an
@@ -51,12 +51,10 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<div class="mb-1 flex items-start">
-					<input type="checkbox" name="newsletter" id="form-newsletter" class="mr-2 mt-1 aspect-square w-4 shrink-0" />
-					<label for="form-newsletter"
-						>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></label
-					>
-				</div>
+				<label class="mb-1 inline-flex items-start">
+					<input type="checkbox" name="newsletter" class="mr-2 mt-1 aspect-square w-4 h-4 shrink-0" />
+					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
+				</label>
 				<p class="text-xs">Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
 			</div>
 
