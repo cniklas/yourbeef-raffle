@@ -1,7 +1,7 @@
 {
   "name": "yourbeef-raffle",
   "type": "module",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,7 +13,6 @@
     "astro": "^4.0.3"
   },
   "devDependencies": {
-    "@frontendista/astro-html-minify": "^2.0.0",
     "@unocss/astro": "^0.58.0",
     "@unocss/reset": "^0.58.0",
     "@unocss/transformer-directives": "^0.58.0",
