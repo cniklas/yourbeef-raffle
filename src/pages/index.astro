@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="Yourbeef Gewinnspiel">
 	<div class="max-w-xl">
-		<img class="mx-auto mb-6 max-w-[200px]" src="/yourbeef-logo.png" alt="" width="600" height="143" />
+		<img class="mx-auto mb-6 max-w-200px" src="/yourbeef-logo.png" alt="" width="200" height="48" />
 		<h1 class="yb__fjalla mb-7 text-4xl/tight uppercase tracking-wide text-white md:text-5xl/tight">
 			Wie viel wiegt das ausgestellte Stück Fleisch?
 		</h1>
@@ -13,8 +13,8 @@ import Layout from '../layouts/Layout.astro'
 			Der Gewinner erhält ein <a
 				href="https://yourbeef.de/premium-steak-paket.html"
 				class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-			> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit
-			den besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+			> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den
+			besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 		</div>
 
 		<form
@@ -41,7 +41,7 @@ import Layout from '../layouts/Layout.astro'
 			<div class="mb-5">
 				<label class="mb-1 inline-flex items-start">
 					<input type="checkbox" name="raffle" class="mr-2 mt-1 aspect-square w-4 h-4 shrink-0" required />
-					 Ja, ich möchte am Gewinnspiel teilnehmen.
+					Ja, ich möchte am Gewinnspiel teilnehmen.
 				</label>
 				<p class="text-xs">
 					Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
@@ -114,13 +114,13 @@ import Layout from '../layouts/Layout.astro'
 	</div>
 
 	<div
-		class="invisible fixed inset-0 grid place-content-center bg-black bg-opacity-70 backdrop-blur-[3px]"
+		class="invisible fixed inset-0 grid place-content-center bg-black bg-opacity-70 backdrop-blur-3px"
 		id="js-dialog"
 	>
 		<div class="relative max-w-xl bg-white px-4 py-5 text-[--text-dark]">
 			<button
 				type="button"
-				class="absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before-content-[''] before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 before:bg-[#414141] after-content-[''] after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45 after:bg-[#414141]"
+				class="absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before-content-[''] before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 before:bg-#414141 after-content-[''] after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45 after:bg-#414141"
 				id="js-close-button"><span class="sr-only">schließen</span></button
 			>
 			<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
