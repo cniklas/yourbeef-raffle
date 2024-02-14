@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="Yourbeef Gewinnspiel">
 	<div class="max-w-xl">
-		<img class="mx-auto mb-6 max-w-200px" src="/yourbeef-logo.png" alt="" width="200" height="48" />
+		<img class="max-w-200px mx-auto mb-6" src="/yourbeef-logo.png" alt="" width="200" height="48" />
 		<h1 class="yb__fjalla mb-7 text-4xl/tight uppercase tracking-wide text-white md:text-5xl/tight">
 			Wie viel wiegt das ausgestellte Stück Fleisch?
 		</h1>
@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro'
 
 			<div class="mb-5">
 				<label class="mb-1 inline-flex items-start">
-					<input type="checkbox" name="raffle" class="mr-2 mt-1 aspect-square w-4 h-4 shrink-0" required />
+					<input type="checkbox" name="raffle" class="mr-2 mt-1 aspect-square h-4 w-4 shrink-0" required />
 					Ja, ich möchte am Gewinnspiel teilnehmen.
 				</label>
 				<p class="text-xs">
@@ -52,7 +52,7 @@ import Layout from '../layouts/Layout.astro'
 
 			<div class="mb-5">
 				<label class="mb-1 inline-flex items-start">
-					<input type="checkbox" name="newsletter" class="mr-2 mt-1 aspect-square w-4 h-4 shrink-0" />
+					<input type="checkbox" name="newsletter" class="mr-2 mt-1 aspect-square h-4 w-4 shrink-0" />
 					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
 				</label>
 				<p class="text-xs">Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
@@ -114,13 +114,13 @@ import Layout from '../layouts/Layout.astro'
 	</div>
 
 	<div
-		class="invisible fixed inset-0 grid place-content-center bg-black bg-opacity-70 backdrop-blur-3px"
+		class="backdrop-blur-3px invisible fixed inset-0 grid place-content-center bg-black bg-opacity-70"
 		id="js-dialog"
 	>
 		<div class="relative max-w-xl bg-white px-4 py-5 text-[--text-dark]">
 			<button
 				type="button"
-				class="absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before-content-[''] before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 before:bg-#414141 after-content-[''] after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45 after:bg-#414141"
+				class="before-content-[''] before:bg-#414141 after-content-[''] after:bg-#414141 absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45"
 				id="js-close-button"><span class="sr-only">schließen</span></button
 			>
 			<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
