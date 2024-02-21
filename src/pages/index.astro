@@ -22,13 +22,13 @@ import Layout from '../layouts/Layout.astro'
 			id="js-form"
 		>
 			<div class="mb-5">
-				<label for="form-answer" class="mb-1 inline-block after:content-[':']">Das ausgestellte Stück wiegt</label>
+				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt</label>
 				<div class="flex items-center">
 					<input
 						type="text"
 						name="answer"
 						id="form-answer"
-						class="h-10 w-20 rounded-sm bg-[--page-bg] px-2 text-right"
+						class="w-20 text-right"
 						inputmode="decimal"
 						autocomplete="off"
 						maxlength="8"
@@ -39,8 +39,8 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label class="mb-1 inline-flex items-start">
-					<input type="checkbox" name="raffle" class="mr-2 mt-1 aspect-square h-4 w-4 shrink-0" required />
+				<label class="checkbox-label">
+					<input type="checkbox" name="raffle" required />
 					Ja, ich möchte am Gewinnspiel teilnehmen.
 				</label>
 				<p class="text-xs">
@@ -51,21 +51,21 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label class="mb-1 inline-flex items-start">
-					<input type="checkbox" name="newsletter" class="mr-2 mt-1 aspect-square h-4 w-4 shrink-0" />
+				<label class="checkbox-label">
+					<input type="checkbox" name="newsletter" />
 					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
 				</label>
 				<p class="text-xs">Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
 			</div>
 
 			<div class="mb-5">
-				<label for="form-email" class="mb-1 inline-block after:content-[':']">E-Mail-Adresse</label>
+				<label for="form-email" class="text-label">E-Mail-Adresse</label>
 				<div>
 					<input
 						type="email"
 						name="email"
 						id="form-email"
-						class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
+						inputmode="email"
 						autocomplete="email"
 						maxlength="64"
 						required
@@ -74,27 +74,18 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label for="form-firstname" class="mb-1 inline-block after:content-[':']">Vorname</label>
+				<label for="form-firstname" class="text-label">Vorname</label>
 				<div>
-					<input
-						type="text"
-						name="first_name"
-						id="form-firstname"
-						class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
-						autocomplete="given-name"
-						maxlength="24"
-						required
-					/>
+					<input type="text" name="first_name" id="form-firstname" autocomplete="given-name" maxlength="24" required />
 				</div>
 			</div>
 			<div class="mb-8">
-				<label for="form-lastname" class="mb-1 inline-block after:content-[':']">Name</label>
+				<label for="form-lastname" class="text-label">Name</label>
 				<div>
 					<input
 						type="text"
 						name="last_name"
 						id="form-lastname"
-						class="h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2"
 						autocomplete="family-name"
 						maxlength="32"
 						required
@@ -137,7 +128,7 @@ import Layout from '../layouts/Layout.astro'
 
 	const handleSuccess = () => {
 		dialogContentEl.innerHTML = `
-			<div class="yb__dialog-header success">Vielen Dank!</div>
+			<div class="dialog-header success">Vielen Dank!</div>
 			<div>Deine Antwort wurde erfolgreich übertragen.</div>
 		`
 	}
@@ -145,7 +136,7 @@ import Layout from '../layouts/Layout.astro'
 		const isValidationError = response.status === 422
 		const data = await response.json()
 		dialogContentEl.innerHTML = `
-			<div class="yb__dialog-header error">${
+			<div class="dialog-header error">${
 				isValidationError ? 'Bitte korrigiere deine Eingabe' : 'Ein Fehler ist aufgetreten'
 			}</div>
 			<div>${
@@ -174,7 +165,7 @@ import Layout from '../layouts/Layout.astro'
 			response.ok ? handleSuccess() : handleError(response)
 		} catch (err) {
 			console.error(err)
-			dialogContentEl.innerHTML = `<div class="yb__dialog-header error">${
+			dialogContentEl.innerHTML = `<div class="dialog-header error">${
 				err.message ?? 'Ein unbekannter Fehler ist aufgetreten'
 			}</div>`
 			submitButtonEl.disabled = false

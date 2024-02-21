@@ -88,16 +88,32 @@ const { title } = Astro.props
 		@apply before-content-[''] before:absolute before:-top-5 before:left-0 before:right-0 before:h-9 before:bg-[url('/paper.png')] before:bg-cover;
 	}
 
-	.yb__dialog-header {
+	.text-label {
+		@apply mb-1 inline-block after:content-[':'];
+	}
+
+	.checkbox-label {
+		@apply mb-1 inline-flex items-start;
+	}
+
+	input:where([type='text'], [type='email']) {
+		@apply h-10 w-full max-w-xs rounded-sm bg-[--page-bg] px-2;
+	}
+
+	input:where([type='checkbox']) {
+		@apply mr-2 mt-1 h-4 w-4 shrink-0;
+	}
+
+	.dialog-header {
 		@apply mr-6 text-lg font-semibold uppercase tracking-wide;
 		color: var(--color, currentColor);
 	}
 
-	.yb__dialog-header.success {
+	.dialog-header.success {
 		--color: var(--button-bg-hover);
 	}
 
-	.yb__dialog-header.error {
+	.dialog-header.error {
 		--color: var(--error);
 	}
 </style>
