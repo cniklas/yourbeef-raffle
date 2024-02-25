@@ -6,8 +6,6 @@ export default defineConfig({
 	// missing in presetMini
 	rules: [
 		['uppercase', { 'text-transform': 'uppercase' }],
-		['accent-[--button-bg]', { 'accent-color': 'var(--button-bg)' }],
-		['backdrop-blur-3px', { '-webkit-backdrop-filter': 'blur(3px)', 'backdrop-filter': 'blur(3px)' }],
 		[
 			'sr-only',
 			{

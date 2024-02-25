@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="Yourbeef Gewinnspiel">
 	<div class="max-w-xl">
 		<img class="max-w-200px mx-auto mb-6" src="/yourbeef-logo.png" alt="" width="200" height="48" />
-		<h1 class="yb__fjalla mb-7 text-4xl/tight uppercase tracking-wide text-white md:text-5xl/tight">
+		<h1 class="mb-7 text-4xl/tight uppercase tracking-wide text-white md:text-5xl/tight">
 			Wie viel wiegt das ausgestellte Stück Fleisch?
 		</h1>
 
@@ -17,10 +17,7 @@ import Layout from '../layouts/Layout.astro'
 			besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 		</div>
 
-		<form
-			class="relative mb-7 bg-[--layer-bg-dark] px-4 py-5 text-left accent-[--button-bg] md:px-8 md:py-10"
-			id="js-form"
-		>
+		<form class="relative mb-7 px-4 py-5 text-left md:px-8 md:py-10" id="js-form">
 			<div class="mb-5">
 				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt</label>
 				<div class="flex items-center">
@@ -104,22 +101,18 @@ import Layout from '../layouts/Layout.astro'
 		</form>
 	</div>
 
-	<div class="backdrop-blur-3px invisible fixed inset-0 grid place-content-center bg-black/70" id="js-dialog">
-		<div class="relative max-w-xl bg-white px-4 py-5 text-[--text-dark]">
-			<button
-				type="button"
-				class="before-content-[''] before:bg-#414141 after-content-[''] after:bg-#414141 absolute right-2 top-2.5 h-8 w-8 rounded-full bg-white before:absolute before:left-4 before:top-2 before:h-4 before:w-0.5 before:rotate-45 after:absolute after:left-4 after:top-2 after:h-4 after:w-0.5 after:-rotate-45"
-				id="js-close-button"><span class="sr-only">schließen</span></button
-			>
-			<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
-		</div>
-	</div>
+	<dialog class="max-w-xl bg-white px-4 py-5 text-[--text-dark]" id="js-dialog">
+		<button type="button" class="dialog-close-button" id="js-close-button"
+			><span class="sr-only">Dialog schließen</span></button
+		>
+		<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
+	</dialog>
 </Layout>
 
 <script>
 	const formEl = document.querySelector('#js-form') as HTMLFormElement
 	const submitButtonEl = document.querySelector('#js-submit-button') as HTMLButtonElement
-	const dialogEl = document.querySelector('#js-dialog') as HTMLDivElement
+	const dialogEl = document.querySelector('#js-dialog') as HTMLDialogElement
 	const closeButtonEl = document.querySelector('#js-close-button') as HTMLButtonElement
 	const dialogContentEl = document.querySelector('#js-dialog-content') as HTMLDivElement
 
@@ -167,12 +160,12 @@ import Layout from '../layouts/Layout.astro'
 			}</div>`
 			submitButtonEl.disabled = false
 		} finally {
-			dialogEl.classList.remove('invisible')
+			dialogEl.showModal()
 		}
 	})
 
 	closeButtonEl.addEventListener('click', () => {
-		dialogEl.classList.add('invisible')
-		dialogContentEl.innerHTML = null
+		dialogEl.close()
+		dialogContentEl.innerHTML = ''
 	})
 </script>
