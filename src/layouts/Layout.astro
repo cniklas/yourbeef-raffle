@@ -7,10 +7,10 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="de" class="bg-[--page-bg] text-[--text-medium]">
+<html lang="de">
 	<!-- prettier-ignore -->
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 
 		<style is:inline>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600-subset.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('../fonts/fjalla-one-v15-latin-regular-subset.woff2') format('woff2')}body{font-family:Montserrat,-apple-system,'Helvetica Neue',Arial,sans-serif}</style>
@@ -24,6 +24,7 @@ const { title } = Astro.props
 		<meta name="description" content="Yourbeef Gewinnspiel">
 		<meta name="robots" content="noindex,follow">
 	</head>
+
 	<body class="flex flex-col">
 		<main class="grid flex-auto justify-center px-4 py-5 text-center">
 			<slot />
@@ -55,6 +56,8 @@ const { title } = Astro.props
 	}
 
 	body {
+		color: var(--text-medium);
+		background-color: var(--page-bg);
 		min-height: 100vh;
 		min-height: 100dvh;
 	}

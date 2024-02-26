@@ -16,13 +16,13 @@ export default defineConfig({
 				margin: '-1px',
 				overflow: 'hidden',
 				clip: 'rect(0, 0, 0, 0)',
-				whiteSpace: 'nowrap',
-				borderWidth: '0',
+				'white-space': 'nowrap',
+				'border-width': '0',
 			},
 		],
 	],
 
-	// https://unocss.dev/presets/wind
+	// https://unocss.dev/presets/mini
 	presets: [presetMini()],
 	// https://unocss.dev/transformers/directives
 	transformers: [transformerDirectives()],
