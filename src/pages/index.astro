@@ -94,7 +94,7 @@ import Layout from '../layouts/Layout.astro'
 			<div>
 				<button
 					type="submit"
-					class="rounded-sm bg-[--button-bg] px-7 py-2 font-semibold text-white hover:bg-[--button-bg-hover] focus-visible:bg-[--button-bg-hover] disabled:cursor-not-allowed disabled:opacity-50 disabled:sepia"
+					class="rounded-sm bg-[--button-bg] px-7 py-2 font-semibold text-white hover:bg-[--button-bg-hover] focus-visible:bg-[--button-bg-hover]"
 					id="js-submit-button">Absenden</button
 				>
 			</div>
@@ -135,12 +135,13 @@ import Layout from '../layouts/Layout.astro'
 					: data?.data?.message ?? response.statusText ?? ''
 			}</div>
 		`
-		submitButtonEl.disabled = false
+		submitButtonEl.setAttribute('aria-disabled', 'false')
 	}
 
 	formEl.addEventListener('submit', async e => {
 		e.preventDefault()
-		submitButtonEl.disabled = true
+		if (submitButtonEl.getAttribute('aria-disabled') === 'true') return
+		submitButtonEl.setAttribute('aria-disabled', 'true')
 
 		try {
 			const response = await fetch(`${import.meta.env.PUBLIC_POSTURL}/gravel/submits/`, {
@@ -158,7 +159,7 @@ import Layout from '../layouts/Layout.astro'
 			dialogContentEl.innerHTML = `<div class="dialog-header error">${
 				err.message ?? 'Ein unbekannter Fehler ist aufgetreten'
 			}</div>`
-			submitButtonEl.disabled = false
+			submitButtonEl.setAttribute('aria-disabled', 'false')
 		} finally {
 			dialogEl.showModal()
 		}

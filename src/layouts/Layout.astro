@@ -82,6 +82,14 @@ const { title } = Astro.props
 		outline-offset: 2px;
 	}
 
+	button[aria-disabled='true'] {
+		cursor: not-allowed;
+	}
+
+	button[aria-disabled='true']:active {
+		outline: none;
+	}
+
 	input:focus-visible,
 	button[type='submit']:focus-visible,
 	button[type='submit']:active {
