@@ -101,7 +101,12 @@ import Layout from '../layouts/Layout.astro'
 		</form>
 	</div>
 
-	<dialog class="max-w-xl bg-white px-4 py-5 text-[--text-dark]" id="js-dialog">
+	<dialog
+		class="max-w-xl bg-white px-4 py-5 text-[--text-dark]"
+		id="js-dialog"
+		role="alertdialog"
+		aria-labelledby="js-dialog-content"
+	>
 		<button type="button" class="dialog-close-button" id="js-close-button"
 			><span class="sr-only">Dialog schließen</span></button
 		>
