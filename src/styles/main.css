@@ -75,7 +75,7 @@ form::before {
 }
 
 .text-label {
-	@apply mb-1 inline-block after:content-[':'];
+	@apply mb-1 inline-block;
 }
 
 .checkbox-label {

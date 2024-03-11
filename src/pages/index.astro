@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro'
 
 		<form class="relative mb-7 px-4 py-5 text-left md:px-8 md:py-10" id="js-form">
 			<div class="mb-5">
-				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt</label>
+				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
 				<div class="flex items-center">
 					<input
 						type="text"
@@ -37,10 +37,10 @@ import Layout from '../layouts/Layout.astro'
 
 			<div class="mb-5">
 				<label class="checkbox-label">
-					<input type="checkbox" name="raffle" required />
+					<input type="checkbox" name="raffle" required aria-describedby="raffle-hint" />
 					Ja, ich möchte am Gewinnspiel teilnehmen.
 				</label>
-				<p class="text-xs">
+				<p class="text-xs" id="raffle-hint">
 					Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
 					Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht an
 					Dritte weitergegeben.
@@ -49,14 +49,16 @@ import Layout from '../layouts/Layout.astro'
 
 			<div class="mb-5">
 				<label class="checkbox-label">
-					<input type="checkbox" name="newsletter" />
+					<input type="checkbox" name="newsletter" aria-describedby="newsletter-hint" />
 					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
 				</label>
-				<p class="text-xs">Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.</p>
+				<p class="text-xs" id="newsletter-hint">
+					Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.
+				</p>
 			</div>
 
 			<div class="mb-5">
-				<label for="form-email" class="text-label">E-Mail-Adresse</label>
+				<label for="form-email" class="text-label">E-Mail-Adresse:</label>
 				<div>
 					<input
 						type="email"
@@ -71,13 +73,13 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label for="form-firstname" class="text-label">Vorname</label>
+				<label for="form-firstname" class="text-label">Vorname:</label>
 				<div>
 					<input type="text" name="first_name" id="form-firstname" autocomplete="given-name" maxlength="24" required />
 				</div>
 			</div>
 			<div class="mb-8">
-				<label for="form-lastname" class="text-label">Name</label>
+				<label for="form-lastname" class="text-label">Name:</label>
 				<div>
 					<input
 						type="text"
