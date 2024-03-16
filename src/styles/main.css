@@ -19,6 +19,15 @@ body {
 	min-height: 100dvh;
 }
 
+/* https://frontendmasters.com/blog/you-want-border-color-transparent-not-border-none/ */
+@media (forced-colors: active) {
+	button,
+	input,
+	textarea {
+		border: 1px solid transparent;
+	}
+}
+
 h1 {
 	font-family: 'Fjalla One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
