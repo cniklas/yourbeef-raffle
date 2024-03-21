@@ -19,6 +19,16 @@ body {
 	min-height: 100dvh;
 }
 
+button,
+label,
+input,
+select,
+textarea,
+summary {
+	/* https://dbushell.com/2024/03/10/css-button-styles-you-might-not-know/#touch-actions */
+	touch-action: manipulation;
+}
+
 /* https://frontendmasters.com/blog/you-want-border-color-transparent-not-border-none/ */
 @media (forced-colors: active) {
 	button,
@@ -43,22 +53,22 @@ h1 {
 }
 
 :focus-visible,
-button:active {
+:where(button):active {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
 
-button[aria-disabled='true'] {
+:where(button)[aria-disabled='true'] {
 	cursor: not-allowed;
 }
 
-button[aria-disabled='true']:active {
+:where(button)[aria-disabled='true']:active {
 	outline: none;
 }
 
-input:focus-visible,
-button[type='submit']:focus-visible,
-button[type='submit']:active {
+:where(input):focus-visible,
+:where(button[type='submit']):focus-visible,
+:where(button[type='submit']):active {
 	outline-color: var(--button-bg-hover);
 }
 
