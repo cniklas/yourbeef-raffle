@@ -151,7 +151,7 @@ import Layout from '../layouts/Layout.astro'
 		submitButtonEl.setAttribute('aria-disabled', 'true')
 
 		try {
-			const response = await fetch(`${import.meta.env.PUBLIC_POSTURL}/gravel/submits/`, {
+			const response = await fetch(`${import.meta.env.PUBLIC_POSTURL}/submits/`, {
 				method: 'POST',
 				cache: 'no-cache',
 				body: new FormData(formEl),
