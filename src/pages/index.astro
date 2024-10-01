@@ -36,8 +36,8 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label class="checkbox-label">
-					<input type="checkbox" name="raffle" required aria-describedby="raffle-hint" />
+				<label for="raffle" class="checkbox-label">
+					<input type="checkbox" name="raffle" id="raffle" required aria-describedby="raffle-hint" />
 					Ja, ich möchte am Gewinnspiel teilnehmen.
 				</label>
 				<p class="text-xs" id="raffle-hint">
@@ -48,8 +48,8 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div class="mb-5">
-				<label class="checkbox-label">
-					<input type="checkbox" name="newsletter" aria-describedby="newsletter-hint" />
+				<label for="newsletter" class="checkbox-label">
+					<input type="checkbox" name="newsletter" id="newsletter" aria-describedby="newsletter-hint" />
 					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
 				</label>
 				<p class="text-xs" id="newsletter-hint">
