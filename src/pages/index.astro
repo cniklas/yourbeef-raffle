@@ -107,7 +107,7 @@ import Layout from '../layouts/Layout.astro'
 		class="max-w-xl bg-white px-4 py-5 text-[--text-dark]"
 		id="js-dialog"
 		role="alertdialog"
-		aria-labelledby="js-dialog-header"
+		aria-labelledby="aria-dialog-heading"
 		tabindex="-1"
 	>
 		<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
@@ -124,7 +124,7 @@ import Layout from '../layouts/Layout.astro'
 
 	const handleSuccess = () => {
 		dialogContentEl.innerHTML = `
-			<div class="dialog-header success" id="js-dialog-header">Vielen Dank!</div>
+			<div class="dialog-header success" id="aria-dialog-heading">Vielen Dank!</div>
 			<div>Deine Antwort wurde erfolgreich übertragen.</div>
 		`
 	}
@@ -132,7 +132,7 @@ import Layout from '../layouts/Layout.astro'
 		const data = response.status !== 404 ? await response.json() : null
 		const isValidationError = response.status === 422
 		dialogContentEl.innerHTML = `
-			<div class="dialog-header error" id="js-dialog-header">${
+			<div class="dialog-header error" id="aria-dialog-heading">${
 				isValidationError ? 'Bitte korrigiere deine Eingabe' : 'Ein Fehler ist aufgetreten'
 			}</div>
 			<div>${
@@ -162,7 +162,7 @@ import Layout from '../layouts/Layout.astro'
 			response.ok ? handleSuccess() : handleError(response)
 		} catch (err) {
 			console.error(err)
-			dialogContentEl.innerHTML = `<div class="dialog-header error" id="js-dialog-header">${
+			dialogContentEl.innerHTML = `<div class="dialog-header error" id="aria-dialog-heading">${
 				err.message ?? 'Ein unbekannter Fehler ist aufgetreten'
 			}</div>`
 			submitButtonEl.setAttribute('aria-disabled', 'false')
