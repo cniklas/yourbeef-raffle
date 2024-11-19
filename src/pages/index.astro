@@ -116,11 +116,11 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <script>
-	const formEl = document.querySelector('#js-form') as HTMLFormElement
-	const submitButtonEl = document.querySelector('#js-submit-button') as HTMLButtonElement
-	const dialogEl = document.querySelector('#js-dialog') as HTMLDialogElement
-	const closeButtonEl = document.querySelector('#js-close-button') as HTMLButtonElement
-	const dialogContentEl = document.querySelector('#js-dialog-content') as HTMLDivElement
+	const formEl = document.querySelector<HTMLFormElement>('#js-form')
+	const submitButtonEl = document.querySelector<HTMLButtonElement>('#js-submit-button')
+	const dialogEl = document.querySelector<HTMLDialogElement>('#js-dialog')
+	const closeButtonEl = document.querySelector<HTMLButtonElement>('#js-close-button')
+	const dialogContentEl = document.querySelector<HTMLDivElement>('#js-dialog-content')
 
 	const handleSuccess = () => {
 		dialogContentEl.innerHTML = `
