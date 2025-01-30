@@ -136,9 +136,9 @@ import Layout from '../layouts/Layout.astro'
 				isValidationError ? 'Bitte korrigiere deine Eingabe' : 'Ein Fehler ist aufgetreten'
 			}</div>
 			<div>${
-				isValidationError && data?.data?.errors?.email?._isUnique
+				isValidationError && data?.errors?.email?._isUnique
 					? 'Diese E-Mail-Adresse wurde bereits eingetragen'
-					: data?.data?.message ?? response.statusText ?? ''
+					: (data?.message ?? response.statusText ?? '')
 			}</div>
 		`
 		submitButtonEl.setAttribute('aria-disabled', 'false')
