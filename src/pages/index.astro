@@ -3,13 +3,11 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Yourbeef Gewinnspiel">
-	<div class="max-w-xl">
-		<img class="max-w-200px mx-auto mb-6" src="/yourbeef-logo.png" alt="" width="200" height="48" />
-		<h1 class="mb-7 text-balance text-4xl/tight uppercase tracking-wide text-white md:text-5xl/tight">
-			Wie viel wiegt das ausgestellte Stück Fleisch?
-		</h1>
+	<div class="mx-auto max-w-xl">
+		<img class="logo" src="/yourbeef-logo.png" alt="" width="200" height="48" />
+		<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
 
-		<div class="mb-12 text-balance">
+		<div class="copy">
 			Der Gewinner erhält ein <a
 				href="https://yourbeef.de/premium-steak-paket.html"
 				class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
@@ -17,7 +15,7 @@ import Layout from '../layouts/Layout.astro'
 			besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 		</div>
 
-		<form class="relative mb-7 px-4 py-5 text-left md:px-8 md:py-10" id="js-form" aria-label="Gewinnspiel">
+		<form class="form" id="js-form" aria-label="Gewinnspiel">
 			<div class="mb-5">
 				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
 				<div class="flex items-center">
@@ -94,24 +92,14 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 
 			<div>
-				<button
-					type="submit"
-					class="h-10 rounded-sm bg-[--button-bg] px-7 font-semibold text-white hover:bg-[--button-bg-hover] focus-visible:bg-[--button-bg-hover]"
-					id="js-submit-button">Absenden</button
-				>
+				<button type="submit" class="submit-button" id="js-submit-button">Absenden</button>
 			</div>
 		</form>
 	</div>
 
-	<dialog
-		class="max-w-xl bg-white px-4 py-5 text-[--text-dark]"
-		id="js-dialog"
-		role="alertdialog"
-		aria-labelledby="aria-dialog-heading"
-		tabindex="-1"
-	>
+	<dialog class="dialog" id="js-dialog" role="alertdialog" aria-labelledby="aria-dialog-heading" tabindex="-1">
 		<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
-		<div class="grid grid-flow-row gap-2" id="js-dialog-content"></div>
+		<div class="dialog-content" id="js-dialog-content"></div>
 	</dialog>
 </Layout>
 
