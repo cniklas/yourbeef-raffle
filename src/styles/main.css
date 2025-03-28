@@ -77,6 +77,7 @@ input:user-invalid {
 }
 
 .main {
+	@apply mx-auto max-w-xl;
 	flex: 1 1 auto;
 }
 
@@ -95,8 +96,7 @@ input:user-invalid {
 }
 
 .form {
-	@apply mb-7 md:px-8 md:py-10;
-	position: relative;
+	@apply relative mb-7 md:px-8 md:py-10;
 	accent-color: var(--button-bg);
 	background-color: hsl(0, 0%, 13%);
 }

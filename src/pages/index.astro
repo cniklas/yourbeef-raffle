@@ -3,99 +3,97 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Yourbeef Gewinnspiel">
-	<div class="mx-auto max-w-xl">
-		<img class="logo" src="/yourbeef-logo.png" alt="" width="200" height="48" />
-		<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
+	<img class="logo" src="/yourbeef-logo.png" alt="" width="200" height="48" />
+	<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
 
-		<div class="copy">
-			Der Gewinner erhält ein <a
-				href="https://yourbeef.de/premium-steak-paket.html"
-				class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-			> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den
-			besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+	<div class="copy">
+		Der Gewinner erhält ein <a
+			href="https://yourbeef.de/premium-steak-paket.html"
+			class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
+		> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den
+		besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+	</div>
+
+	<form class="form" id="js-form" aria-label="Gewinnspiel">
+		<div class="mb-5">
+			<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
+			<div class="flex items-center">
+				<input
+					type="text"
+					name="answer"
+					id="form-answer"
+					class="w-20 text-right"
+					inputmode="decimal"
+					autocomplete="off"
+					maxlength="8"
+					required
+				/>
+				<span class="ml-2">kg</span>
+			</div>
 		</div>
 
-		<form class="form" id="js-form" aria-label="Gewinnspiel">
-			<div class="mb-5">
-				<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
-				<div class="flex items-center">
-					<input
-						type="text"
-						name="answer"
-						id="form-answer"
-						class="w-20 text-right"
-						inputmode="decimal"
-						autocomplete="off"
-						maxlength="8"
-						required
-					/>
-					<span class="ml-2">kg</span>
-				</div>
-			</div>
+		<div class="mb-5">
+			<label for="raffle" class="checkbox-label">
+				<input type="checkbox" name="raffle" id="raffle" required aria-describedby="raffle-hint" />
+				Ja, ich möchte am Gewinnspiel teilnehmen.
+			</label>
+			<p class="text-xs" id="raffle-hint">
+				Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
+				Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht an
+				Dritte weitergegeben.
+			</p>
+		</div>
 
-			<div class="mb-5">
-				<label for="raffle" class="checkbox-label">
-					<input type="checkbox" name="raffle" id="raffle" required aria-describedby="raffle-hint" />
-					Ja, ich möchte am Gewinnspiel teilnehmen.
-				</label>
-				<p class="text-xs" id="raffle-hint">
-					Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
-					Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht an
-					Dritte weitergegeben.
-				</p>
-			</div>
+		<div class="mb-5">
+			<label for="newsletter" class="checkbox-label">
+				<input type="checkbox" name="newsletter" id="newsletter" aria-describedby="newsletter-hint" />
+				<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
+			</label>
+			<p class="text-xs" id="newsletter-hint">
+				Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.
+			</p>
+		</div>
 
-			<div class="mb-5">
-				<label for="newsletter" class="checkbox-label">
-					<input type="checkbox" name="newsletter" id="newsletter" aria-describedby="newsletter-hint" />
-					<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
-				</label>
-				<p class="text-xs" id="newsletter-hint">
-					Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.
-				</p>
-			</div>
-
-			<div class="mb-5">
-				<label for="form-email" class="text-label">E-Mail-Adresse:</label>
-				<div>
-					<input
-						type="email"
-						name="email"
-						id="form-email"
-						inputmode="email"
-						autocomplete="email"
-						maxlength="64"
-						required
-					/>
-				</div>
-			</div>
-
-			<div class="mb-5">
-				<label for="form-firstname" class="text-label">Vorname:</label>
-				<div>
-					<input type="text" name="first_name" id="form-firstname" autocomplete="given-name" maxlength="24" required />
-				</div>
-			</div>
-			<div class="mb-8">
-				<label for="form-lastname" class="text-label">Name:</label>
-				<div>
-					<input
-						type="text"
-						name="last_name"
-						id="form-lastname"
-						autocomplete="family-name"
-						maxlength="32"
-						required
-						enterkeyhint="send"
-					/>
-				</div>
-			</div>
-
+		<div class="mb-5">
+			<label for="form-email" class="text-label">E-Mail-Adresse:</label>
 			<div>
-				<button type="submit" class="submit-button" id="js-submit-button">Absenden</button>
+				<input
+					type="email"
+					name="email"
+					id="form-email"
+					inputmode="email"
+					autocomplete="email"
+					maxlength="64"
+					required
+				/>
 			</div>
-		</form>
-	</div>
+		</div>
+
+		<div class="mb-5">
+			<label for="form-firstname" class="text-label">Vorname:</label>
+			<div>
+				<input type="text" name="first_name" id="form-firstname" autocomplete="given-name" maxlength="24" required />
+			</div>
+		</div>
+		<div class="mb-8">
+			<label for="form-lastname" class="text-label">Name:</label>
+			<div>
+				<input
+					type="text"
+					name="last_name"
+					id="form-lastname"
+					autocomplete="family-name"
+					maxlength="32"
+					required
+					enterkeyhint="send"
+				/>
+			</div>
+		</div>
+
+		<div>
+			<button type="submit" class="submit-button" id="js-submit-button">Absenden</button>
+		</div>
+	</form>
 
 	<dialog class="dialog" id="js-dialog" role="alertdialog" aria-labelledby="aria-dialog-heading" tabindex="-1">
 		<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
