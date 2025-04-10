@@ -129,7 +129,7 @@ input:where([type='checkbox']) {
 }
 
 .submit-button {
-	@apply h-10 rounded-sm bg-[--button-bg] px-7 font-semibold;
+	@apply h-10 rounded-sm bg-[--button-bg] px-7 font-semibold tracking-wider;
 	color: hsl(0, 0%, 100%);
 }
 
