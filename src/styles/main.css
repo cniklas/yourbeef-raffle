@@ -53,6 +53,10 @@ summary {
 	outline-offset: 2px;
 }
 
+:where([tabindex='-1']):focus {
+	outline: none;
+}
+
 :where(button)[aria-disabled='true'] {
 	cursor: not-allowed;
 }
