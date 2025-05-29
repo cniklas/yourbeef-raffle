@@ -53,6 +53,10 @@ summary {
 	outline-offset: 2px;
 }
 
+:where(:any-link):focus-visible {
+	@apply rounded-sm;
+}
+
 :where([tabindex='-1']):focus {
 	outline: none;
 }
