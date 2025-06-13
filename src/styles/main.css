@@ -188,7 +188,7 @@ input:where([type='checkbox']) {
 }
 
 .dialog-header {
-	@apply mr-6 text-lg font-semibold uppercase tracking-wide;
+	@apply mr-8 text-balance text-lg font-semibold uppercase tracking-wide;
 	color: var(--color, currentColor);
 }
 
