@@ -45,6 +45,7 @@ summary {
 :any-link {
 	text-decoration-line: underline;
 	text-underline-offset: 0.09375em;
+	text-decoration-thickness: 0.075em;
 }
 
 :focus-visible,
