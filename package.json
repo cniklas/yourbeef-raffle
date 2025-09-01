@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@unocss/reset": "^66.3.2",
-    "@unocss/transformer-directives": "^66.0.0",
+    "@unocss/transformer-directives": "^66.5.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "unocss": "^66.3.3"
