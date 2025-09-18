@@ -42,14 +42,27 @@ summary {
 	backdrop-filter: blur(3px);
 }
 
+button {
+	transition-property: background-color, scale;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
+:where(button):active {
+	scale: 0.97;
+}
+
+:where(button)[aria-disabled='true'] {
+	cursor: not-allowed;
+}
+
 :any-link {
 	text-decoration-line: underline;
 	text-underline-offset: 0.09375em;
 	text-decoration-thickness: 0.075em;
 }
 
-:focus-visible,
-:where(button):active {
+:focus-visible {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
@@ -62,17 +75,7 @@ summary {
 	outline: none;
 }
 
-:where(button)[aria-disabled='true'] {
-	cursor: not-allowed;
-}
-
-:where(button)[aria-disabled='true']:active {
-	outline: none;
-}
-
-:where(input):focus-visible,
-:where(button[type='submit']):focus-visible,
-:where(button[type='submit']):active {
+:where(input, button[type='submit']):focus-visible {
 	outline-color: var(--button-bg-hover);
 }
 
@@ -177,7 +180,7 @@ input:where([type='checkbox']) {
 	top: 0.5rem;
 	height: 1rem;
 	width: 0.125rem;
-	transform: rotate(var(--rotate, 45deg));
+	rotate: var(--rotate, 45deg);
 }
 
 .dialog-close-button::after {
