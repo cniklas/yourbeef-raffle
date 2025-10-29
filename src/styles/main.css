@@ -58,8 +58,8 @@ button {
 
 :any-link {
 	text-decoration-line: underline;
-	text-underline-offset: 0.09375em;
-	text-decoration-thickness: 0.075em;
+	text-underline-offset: 0.3ex;
+	text-decoration-thickness: 0.15ex;
 }
 
 :focus-visible {
