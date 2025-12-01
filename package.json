@@ -18,6 +18,6 @@
     "@unocss/transformer-directives": "^66.0.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "unocss": "^66.5.4"
+    "unocss": "^66.5.9"
   }
 }
