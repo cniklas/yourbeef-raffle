@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Yourbeef Gewinnspiel">
@@ -9,8 +9,8 @@ import Layout from '../layouts/Layout.astro'
 	<div class="copy">
 		Der Gewinner erhält ein <a
 			href="https://yourbeef.de/premium-steak-paket.html"
-			class="whitespace-nowrap font-semibold text-[--text-light]">Premium Steak Paket</a
-		> im Wert von <strong class="whitespace-nowrap font-semibold text-[--text-light]">über €&nbsp;120,—</strong> mit den
+			class="font-semibold whitespace-nowrap text-[--text-light]">Premium Steak Paket</a
+		> im Wert von <strong class="font-semibold whitespace-nowrap text-[--text-light]">über €&nbsp;120,—</strong> mit den
 		besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 	</div>
 
@@ -102,6 +102,7 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <script>
+	import { POSTURL } from 'astro:env/client'
 	const formEl = document.querySelector<HTMLFormElement>('#js-form')
 	const submitButtonEl = document.querySelector<HTMLButtonElement>('#js-submit-button')
 	const dialogEl = document.querySelector<HTMLDialogElement>('#js-dialog')
@@ -136,13 +137,11 @@ import Layout from '../layouts/Layout.astro'
 		submitButtonEl.setAttribute('aria-disabled', 'true')
 
 		try {
-			const response = await fetch(`${import.meta.env.PUBLIC_POSTURL}/submits/`, {
+			const response = await fetch(`${POSTURL}/submits/`, {
 				method: 'POST',
 				cache: 'no-cache',
 				body: new FormData(formEl),
-				headers: {
-					accept: 'application/json',
-				},
+				headers: { accept: 'application/json' },
 			})
 
 			response.ok ? handleSuccess() : handleError(response)
