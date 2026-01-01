@@ -11,7 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "astro": "^5.16.3"
+    "astro": "^5.16.6"
   },
   "devDependencies": {
     "@unocss/reset": "^66.5.4",
