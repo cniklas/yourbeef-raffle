@@ -1,7 +1,7 @@
 {
   "name": "yourbeef-raffle",
   "type": "module",
-  "version": "1.30.0",
+  "version": "1.31.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,8 +14,6 @@
     "astro": "^5.16.6"
   },
   "devDependencies": {
-    "@unocss/reset": "^66.5.4",
-    "@unocss/transformer-directives": "^66.0.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "unocss": "^66.5.12"
