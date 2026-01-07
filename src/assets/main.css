@@ -98,13 +98,13 @@ input:user-invalid {
 }
 
 .headline {
-	@apply mb-7 text-balance text-center text-4xl/tight uppercase tracking-wide md:text-5xl/tight;
+	@apply mb-7 text-center text-4xl/tight tracking-wide text-balance uppercase md:text-5xl/tight;
 	font-family: 'Fjalla One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: hsl(0 0% 100%);
 }
 
 .copy {
-	@apply mb-12 text-balance text-center;
+	@apply mb-12 text-center text-balance;
 }
 
 .form {
@@ -137,16 +137,17 @@ input:where([type='text'], [type='email']) {
 }
 
 input:where([type='checkbox']) {
-	@apply mr-2 mt-1 size-4 shrink-0;
+	@apply mt-1 mr-2 size-4 shrink-0;
 }
 
 .submit-button {
-	@apply h-10 rounded-sm bg-[--button-bg] px-7 font-semibold tracking-wider;
+	@apply font-600 h-10 rounded-sm px-7 tracking-wider;
+	background-color: var(--button-bg);
 	color: hsl(0 0% 100%);
 }
 
 .submit-button:is(:hover, :focus-visible) {
-	@apply bg-[--button-bg-hover];
+	background-color: var(--button-bg-hover);
 }
 
 .footer {
@@ -192,7 +193,7 @@ input:where([type='checkbox']) {
 }
 
 .dialog-header {
-	@apply mr-8 text-balance text-lg font-semibold uppercase tracking-wide;
+	@apply font-600 mr-8 text-lg tracking-wide text-balance uppercase;
 	color: var(--color, currentColor);
 }
 
