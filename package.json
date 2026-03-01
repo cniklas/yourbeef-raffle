@@ -11,11 +11,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "astro": "^5.18.0",
-    "unocss": "^66.6.2"
+    "astro": "^5.18.0"
   },
   "devDependencies": {
+    "@unocss/astro": "^66.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "unocss": "^66.6.2"
   }
 }
