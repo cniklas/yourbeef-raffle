@@ -1,105 +1,142 @@
 ---
-import Layout from '@/layouts/Layout.astro'
+import '@/assets/main.css'
 ---
 
-<Layout title="Yourbeef Gewinnspiel">
-	<img class="logo" src="/yourbeef-logo.png" alt="" width="200" height="48" />
-	<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
+<!doctype html>
+<html lang="de">
+	<!-- prettier-ignore -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Yourbeef Gewinnspiel</title>
 
-	<div class="copy">
-		Der Gewinner erhält ein <a
-			href="https://yourbeef.de/premium-steak-paket.html"
-			class="font-600 whitespace-nowrap text-[--text-light]">Premium Steak Paket</a
-		> im Wert von <strong class="font-600 whitespace-nowrap text-[--text-light]">über €&nbsp;120,—</strong> mit den besten
-		Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
-	</div>
+		<style is:inline>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600-subset.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('../fonts/fjalla-one-v15-latin-regular-subset.woff2') format('woff2')}body{font-family:Montserrat,system-ui,sans-serif}</style>
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-v25-latin-regular.woff2" crossorigin>
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-v25-latin-600-subset.woff2" crossorigin>
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/fjalla-one-v15-latin-regular-subset.woff2" crossorigin>
 
-	<form class="form" id="js-form" aria-label="Gewinnspiel">
-		<div class="mb-5">
-			<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
-			<div class="flex items-center">
-				<input
-					type="text"
-					name="answer"
-					id="form-answer"
-					class="w-20 text-right"
-					inputmode="decimal"
-					autocomplete="off"
-					maxlength="8"
-					required
-				/>
-				<span class="ml-2">kg</span>
+		<link rel="icon" type="image/x-icon" href="favicon.png">
+
+		<meta name="description" content="Yourbeef Gewinnspiel">
+		<meta name="robots" content="noindex,follow">
+	</head>
+
+	<body>
+		<main class="main">
+			<img class="logo" src="/yourbeef-logo.png" alt="" width="200" height="48" />
+			<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
+
+			<div class="copy">
+				Der Gewinner erhält ein <a
+					href="https://yourbeef.de/premium-steak-paket.html"
+					class="font-600 whitespace-nowrap text-[--text-light]">Premium Steak Paket</a
+				> im Wert von <strong class="font-600 whitespace-nowrap text-[--text-light]">über €&nbsp;120,—</strong> mit den besten
+				Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 			</div>
-		</div>
 
-		<div class="mb-5">
-			<label for="raffle" class="checkbox-label">
-				<input type="checkbox" name="raffle" id="raffle" required aria-describedby="raffle-hint" />
-				Ja, ich möchte am Gewinnspiel teilnehmen.
-			</label>
-			<p class="text-xs" id="raffle-hint">
-				Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
-				Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht an
-				Dritte weitergegeben.
-			</p>
-		</div>
+			<form class="form" id="js-form" aria-label="Gewinnspiel">
+				<div class="mb-5">
+					<label for="form-answer" class="text-label">Das ausgestellte Stück wiegt:</label>
+					<div class="flex items-center">
+						<input
+							type="text"
+							name="answer"
+							id="form-answer"
+							class="w-20 text-right"
+							inputmode="decimal"
+							autocomplete="off"
+							maxlength="8"
+							required
+						/>
+						<span class="ml-2">kg</span>
+					</div>
+				</div>
 
-		<div class="mb-5">
-			<label for="newsletter" class="checkbox-label">
-				<input type="checkbox" name="newsletter" id="newsletter" aria-describedby="newsletter-hint" />
-				<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
-			</label>
-			<p class="text-xs" id="newsletter-hint">
-				Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.
-			</p>
-		</div>
+				<div class="mb-5">
+					<label for="raffle" class="checkbox-label">
+						<input type="checkbox" name="raffle" id="raffle" required aria-describedby="raffle-hint" />
+						Ja, ich möchte am Gewinnspiel teilnehmen.
+					</label>
+					<p class="text-xs" id="raffle-hint">
+						Bitte informiert mich über das Ergebnis des Gewinnspiels. Ich bin mit der elektronischen Speicherung und
+						Verarbeitung durch yourbeef.de (Fleischwaren Harald Kiesinger e.K.) einverstanden. Meine Daten werden nicht
+						an Dritte weitergegeben.
+					</p>
+				</div>
 
-		<div class="mb-5">
-			<label for="form-email" class="text-label">E-Mail-Adresse:</label>
-			<div>
-				<input
-					type="email"
-					name="email"
-					id="form-email"
-					inputmode="email"
-					autocomplete="email"
-					maxlength="64"
-					required
-				/>
+				<div class="mb-5">
+					<label for="newsletter" class="checkbox-label">
+						<input type="checkbox" name="newsletter" id="newsletter" aria-describedby="newsletter-hint" />
+						<span>Ja, sendet mir bitte den Yourbeef E-Mail-Newsletter. <small class="text-xs">(optional)</small></span>
+					</label>
+					<p class="text-xs" id="newsletter-hint">
+						Informationen über exklusive Angebote, die besten Grilltipps und Gratis-Rezepte.
+					</p>
+				</div>
+
+				<div class="mb-5">
+					<label for="form-email" class="text-label">E-Mail-Adresse:</label>
+					<div>
+						<input
+							type="email"
+							name="email"
+							id="form-email"
+							inputmode="email"
+							autocomplete="email"
+							maxlength="64"
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<label for="form-firstname" class="text-label">Vorname:</label>
+					<div>
+						<input
+							type="text"
+							name="first_name"
+							id="form-firstname"
+							autocomplete="given-name"
+							maxlength="24"
+							required
+						/>
+					</div>
+				</div>
+				<div class="mb-8">
+					<label for="form-lastname" class="text-label">Name:</label>
+					<div>
+						<input
+							type="text"
+							name="last_name"
+							id="form-lastname"
+							autocomplete="family-name"
+							maxlength="32"
+							required
+							enterkeyhint="send"
+						/>
+					</div>
+				</div>
+
+				<div>
+					<button type="submit" class="submit-button" id="js-submit-button">Absenden</button>
+				</div>
+			</form>
+		</main>
+
+		<footer class="footer">
+			<div class="mx-auto w-fit">
+				<a href="https://yourbeef.de/">Yourbeef.de</a> •
+				<a href="https://yourbeef.de/impressum">Impressum</a> •
+				<a href="https://yourbeef.de/datenschutz">Datenschutz</a>
 			</div>
-		</div>
+		</footer>
 
-		<div class="mb-5">
-			<label for="form-firstname" class="text-label">Vorname:</label>
-			<div>
-				<input type="text" name="first_name" id="form-firstname" autocomplete="given-name" maxlength="24" required />
-			</div>
-		</div>
-		<div class="mb-8">
-			<label for="form-lastname" class="text-label">Name:</label>
-			<div>
-				<input
-					type="text"
-					name="last_name"
-					id="form-lastname"
-					autocomplete="family-name"
-					maxlength="32"
-					required
-					enterkeyhint="send"
-				/>
-			</div>
-		</div>
-
-		<div>
-			<button type="submit" class="submit-button" id="js-submit-button">Absenden</button>
-		</div>
-	</form>
-
-	<dialog class="dialog" id="js-dialog" role="alertdialog" aria-labelledby="aria-dialog-heading" tabindex="-1">
-		<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
-		<div class="dialog-content" id="js-dialog-content"></div>
-	</dialog>
-</Layout>
+		<dialog class="dialog" id="js-dialog" role="alertdialog" aria-labelledby="aria-dialog-heading" tabindex="-1">
+			<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
+			<div class="dialog-content" id="js-dialog-content"></div>
+		</dialog>
+	</body>
+</html>
 
 <script>
 	import { POSTURL } from 'astro:env/client'
