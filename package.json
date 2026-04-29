@@ -1,24 +1,19 @@
 {
   "name": "yourbeef-raffle",
   "type": "module",
-  "version": "1.34.0",
+  "version": "2.0.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier --write src/"
-  },
-  "dependencies": {
-    "astro": "^6.1.10"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@unocss/astro": "^66.6.7",
     "@unocss/reset": "^66.6.8",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier": "3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "unocss": "^66.6.7"
+    "typescript": "~6.0.2",
+    "unocss": "^66.6.7",
+    "vite": "^8.0.10"
   },
   "engines": {
     "node": ">=22.12.0"

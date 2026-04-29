@@ -1,7 +1,3 @@
----
-import '@/assets/main.css'
----
-
 <!doctype html>
 <html lang="de">
 	<!-- prettier-ignore -->
@@ -10,7 +6,7 @@ import '@/assets/main.css'
 		<meta name="viewport" content="width=device-width">
 		<title>Yourbeef Gewinnspiel</title>
 
-		<style is:inline>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600-subset.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('../fonts/fjalla-one-v15-latin-regular-subset.woff2') format('woff2')}body{font-family:Montserrat,system-ui,sans-serif}</style>
+		<style>@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url('/fonts/montserrat-v25-latin-regular.woff2') format('woff2')}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:url('/fonts/montserrat-v25-latin-600-subset.woff2') format('woff2')}@font-face{font-display:swap;font-family:'Fjalla One';font-style:normal;font-weight:400;src:url('/fonts/fjalla-one-v15-latin-regular-subset.woff2') format('woff2')}body{font-family:Montserrat,system-ui,sans-serif}</style>
 		<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-v25-latin-regular.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-v25-latin-600-subset.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/fonts/fjalla-one-v15-latin-regular-subset.woff2" crossorigin>
@@ -27,11 +23,12 @@ import '@/assets/main.css'
 			<h1 class="headline">Wie viel wiegt das ausgestellte Stück Fleisch?</h1>
 
 			<div class="copy">
-				Der Gewinner erhält ein <a
-					href="https://yourbeef.de/premium-steak-paket.html"
-					class="font-600 whitespace-nowrap text-[--text-light]">Premium Steak Paket</a
-				> im Wert von <strong class="font-600 whitespace-nowrap text-[--text-light]">über €&nbsp;120,—</strong> mit den besten
-				Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
+				Der Gewinner erhält ein
+				<a href="https://yourbeef.de/premium-steak-paket.html" class="font-600 whitespace-nowrap text-[--text-light]"
+					>Premium Steak Paket</a
+				>
+				im Wert von <strong class="font-600 whitespace-nowrap text-[--text-light]">über €&nbsp;120,—</strong> mit den
+				besten Steak Cuts von der Simmentaler Färse – frei Haus zum Wunschliefertermin.
 			</div>
 
 			<form class="form" id="js-form" aria-label="Gewinnspiel">
@@ -125,8 +122,7 @@ import '@/assets/main.css'
 
 		<footer class="footer">
 			<div class="mx-auto w-fit">
-				<a href="https://yourbeef.de/">Yourbeef.de</a> •
-				<a href="https://yourbeef.de/impressum">Impressum</a> •
+				<a href="https://yourbeef.de/">Yourbeef.de</a> • <a href="https://yourbeef.de/impressum">Impressum</a> •
 				<a href="https://yourbeef.de/datenschutz">Datenschutz</a>
 			</div>
 		</footer>
@@ -135,69 +131,7 @@ import '@/assets/main.css'
 			<button type="button" id="js-close-button" class="dialog-close-button" aria-label="Dialog schließen"></button>
 			<div class="dialog-content" id="js-dialog-content"></div>
 		</dialog>
+
+		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>
-
-<script>
-	import { POSTURL } from 'astro:env/client'
-	const formEl = document.querySelector<HTMLFormElement>('#js-form')
-	const submitButtonEl = document.querySelector<HTMLButtonElement>('#js-submit-button')
-	const dialogEl = document.querySelector<HTMLDialogElement>('#js-dialog')
-	const closeButtonEl = document.querySelector<HTMLButtonElement>('#js-close-button')
-	const dialogContentEl = document.querySelector<HTMLDivElement>('#js-dialog-content')
-
-	const handleSuccess = () => {
-		dialogContentEl.innerHTML = `
-			<div class="dialog-header success" id="aria-dialog-heading">Vielen Dank!</div>
-			<div>Deine Antwort wurde erfolgreich übertragen.</div>
-		`
-	}
-	const handleError = async (response: Response) => {
-		const data = response.status !== 404 ? await response.json() : null
-		const isValidationError = response.status === 422
-		dialogContentEl.innerHTML = `
-			<div class="dialog-header error" id="aria-dialog-heading">${
-				isValidationError ? 'Bitte korrigiere deine Eingabe' : 'Ein Fehler ist aufgetreten'
-			}</div>
-			<div>${
-				isValidationError && data?.errors?.email?._isUnique
-					? 'Diese E-Mail-Adresse wurde bereits eingetragen'
-					: (data?.message ?? response.statusText ?? '')
-			}</div>
-		`
-		submitButtonEl.setAttribute('aria-disabled', 'false')
-	}
-
-	formEl.addEventListener('submit', async e => {
-		e.preventDefault()
-		if (submitButtonEl.getAttribute('aria-disabled') === 'true') return
-		submitButtonEl.setAttribute('aria-disabled', 'true')
-
-		try {
-			const response = await fetch(`${POSTURL}/submits/`, {
-				method: 'POST',
-				cache: 'no-cache',
-				body: new FormData(formEl),
-				headers: { accept: 'application/json' },
-			})
-
-			response.ok ? handleSuccess() : handleError(response)
-		} catch (err) {
-			console.error(err)
-			dialogContentEl.innerHTML = `<div class="dialog-header error" id="aria-dialog-heading">${
-				err.message ?? 'Ein unbekannter Fehler ist aufgetreten'
-			}</div>`
-			submitButtonEl.setAttribute('aria-disabled', 'false')
-		} finally {
-			dialogEl.showModal()
-			dialogEl.focus()
-		}
-	})
-
-	closeButtonEl.addEventListener('click', () => {
-		dialogEl.close()
-	})
-	dialogEl.addEventListener('close', () => {
-		dialogContentEl.innerHTML = ''
-	})
-</script>
