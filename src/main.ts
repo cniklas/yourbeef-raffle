@@ -1,6 +1,6 @@
 import '@unocss/reset/tailwind-compat.css'
 import 'virtual:uno.css'
-import './assets/main.css'
+import './main.css'
 
 const formEl = document.querySelector<HTMLFormElement>('#js-form')
 const submitButtonEl = document.querySelector<HTMLButtonElement>('#js-submit-button')
