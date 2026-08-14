@@ -89,8 +89,9 @@ input:user-invalid {
 }
 
 .main {
-	@apply mx-auto max-w-xl;
 	flex: 1 1 auto;
+	max-width: 40rem;
+	margin-inline: auto;
 }
 
 .logo {
@@ -98,8 +99,10 @@ input:user-invalid {
 }
 
 .headline {
-	@apply mb-7 text-center text-4xl/tight tracking-wide text-balance uppercase md:text-5xl/tight;
+	@apply mb-7 text-center tracking-wide text-balance uppercase;
 	font-family: 'Fjalla One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: clamp(2.25rem, 7.5vi, 3rem);
+	line-height: 1.25;
 	color: hsl(0 0% 100%);
 }
 
@@ -107,8 +110,14 @@ input:user-invalid {
 	@apply mb-12 text-center text-balance;
 }
 
+.copy :where(a, strong) {
+	display: inline-block;
+	font-weight: 600;
+	color: var(--text-light);
+}
+
 .form {
-	@apply relative mb-7 md:px-8 md:py-10;
+	@apply relative mb-7 py-8 sm:px-8;
 	accent-color: var(--button-bg);
 	background-color: hsl(0 0% 13%);
 }
