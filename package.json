@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@unocss/reset": "^66.7.5",
+    "@unocss/reset": "^66.8.1",
     "prettier": "3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "~7.0.2",
-    "unocss": "^66.7.5",
-    "vite": "^8.1.5"
+    "unocss": "^66.8.1",
+    "vite": "^8.2.2"
   },
   "engines": {
     "node": ">=22.12.0"
